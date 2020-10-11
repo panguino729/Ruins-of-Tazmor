@@ -30,12 +30,13 @@ public class Object : MonoBehaviour
         Reflects = 4, //Reflects lasers
         Pipe = 8 //Connecting pipes puzzle - Van's idea
     }
-    public ObjectProperties properties;
+    public int properties;
+    private ObjectProperties objProperties;
     public bool isGoal; //Determines whether or not the object is the end goal of the level
     // Start is called before the first frame update
     void Start()
     {
-        
+        objProperties = (ObjectProperties)properties;
     }
 
     // Update is called once per frame
