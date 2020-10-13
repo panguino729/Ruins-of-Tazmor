@@ -18,7 +18,8 @@ public class Object : MonoBehaviour
     public string objTag;
 
     public float moveStrength; //The strength of the force that telekinesis applies - could potentially make this different on different objects.
-    private bool isBehingHeld = false;
+    public float maxVelocity; //The maximum velocity during telekinesis.
+    private bool isBeingHeld = false;
     public Rigidbody2D rb;
     /*//Enum to store possible properties of objects
     // 0 - None
@@ -66,15 +67,33 @@ public class Object : MonoBehaviour
     // Update is called once per frame
     void Update() //Probably need stuff here for pipes
     {
-        if (isBehingHeld) 
+        if(rb.velocity.x * rb.velocity.x + rb.velocity.y * rb.velocity.y < 0.001)
+        {
+            rb.velocity = new Vector2(0, 0);
+        }
+        if (isBeingHeld) 
             //Handles the telekinesis - applies a force toward the mouse cursor on the object. 
             //May need to add something to make sure multiple things can't be held at once if they slightly overlap.
         {
             Vector3 mousePos = Input.mousePosition;
             mousePos = Input.mousePosition;
             mousePos = Camera.main.ScreenToWorldPoint(mousePos);
-            isBehingHeld = true;
-            rb.AddForce(moveStrength * (mousePos - this.transform.position));
+            isBeingHeld = true;
+            Vector3 vtoc = mousePos - this.transform.position;
+            float distToMouseSqr = vtoc.x * vtoc.x + vtoc.y * vtoc.y;
+            rb.AddForce(moveStrength * distToMouseSqr * (mousePos - this.transform.position));
+        }
+        if (rb.velocity.x != 0 || rb.velocity.y != 0) //Only triggers if the object is moving, to limit the calls per frame
+        {
+            float velocityMag = rb.velocity.magnitude;
+            if (velocityMag >= maxVelocity) //If the object is moving faster than its maximum velocity, applies a force in the opposite direction of that velocity to slow it down.
+            {
+                Vector3 velocityNorm = rb.velocity.normalized;
+                rb.velocity = velocityNorm * maxVelocity;
+                /*Vector3 forceDir = -velocityNorm;
+                float forceMag = velocityMag - maxVelocity;
+                rb.AddForce(forceDir * forceMag);*/
+            }
         }
     }
     private void OnMouseDown() //Checks if the player left clicks on a moveable object in order to apply telekinesis
@@ -83,12 +102,14 @@ public class Object : MonoBehaviour
         {
             if (tag == "moveable")
             {
-                isBehingHeld = true;
+                rb.gravityScale = 0;
+                isBeingHeld = true;
             }
         }
     }
     private void OnMouseUp() //If the player releases the mouse, no longer applies telekinesis
     {
-        isBehingHeld = false;
+        rb.gravityScale = 1;
+        isBeingHeld = false;
     }
 }
