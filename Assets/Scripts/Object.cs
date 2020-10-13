@@ -67,6 +67,10 @@ public class Object : MonoBehaviour
     // Update is called once per frame
     void Update() //Probably need stuff here for pipes
     {
+        if(rb.velocity.x * rb.velocity.x + rb.velocity.y * rb.velocity.y < 0.001)
+        {
+            rb.velocity = new Vector2(0, 0);
+        }
         if (isBeingHeld) 
             //Handles the telekinesis - applies a force toward the mouse cursor on the object. 
             //May need to add something to make sure multiple things can't be held at once if they slightly overlap.
