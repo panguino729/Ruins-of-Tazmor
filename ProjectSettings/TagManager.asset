@@ -4,8 +4,10 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - trap
+  - showOnGame
+  - showOnPause
   - moveable
+  - trap
   - victory
   layers:
   - Default
