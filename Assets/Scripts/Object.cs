@@ -7,7 +7,7 @@ public class Object : MonoBehaviour
 {
     public static List<Object> objects; //An easily accessible list of all the objects
 
-    public Player player;
+    public PlayerMovement player;
     /* 
      * objTag determines what the object can do.
      * 
