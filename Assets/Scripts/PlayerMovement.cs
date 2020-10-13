@@ -92,7 +92,7 @@ public class PlayerMovement : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        switch (tag)
+        switch (collision.gameObject.tag)
         {
             case "trap":
                 this.transform.position = startPos; //There'll need to be a ResetLevel() method later - I'm just doing this as a placeholder.
