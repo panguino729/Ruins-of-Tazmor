@@ -9,7 +9,7 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody2D rb;
 
     private bool jumping;
-
+    Vector3 startPos;
     public float maxSpeed = 1.0f;
     public float jumpingForceMultiplier = 1.0f;
     public float appliedForce = 1.0f;
@@ -17,6 +17,7 @@ public class PlayerMovement : MonoBehaviour
 
     void Start()
     {
+        startPos = this.transform.position;
         rb = GetComponent<Rigidbody2D>();
         jumping = false;
     }
@@ -88,5 +89,20 @@ public class PlayerMovement : MonoBehaviour
         }
 
         return false;
+    }
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        switch (tag)
+        {
+            case "trap":
+                this.transform.position = startPos; //There'll need to be a ResetLevel() method later - I'm just doing this as a placeholder.
+                this.transform.rotation = Quaternion.Euler(0, 0, 0);
+                break;
+            case "victory":
+                //Occurs when the player reaches the end of the level
+                break;
+            default:
+                break;
+        }
     }
 }
