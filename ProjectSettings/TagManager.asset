@@ -10,6 +10,7 @@ TagManager:
   - trap
   - victory
   - plate
+  - showOnSpells
   layers:
   - Default
   - TransparentFX

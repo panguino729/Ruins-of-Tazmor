@@ -24,11 +24,6 @@ public class ButtonManager : MonoBehaviour
         SceneManager.LoadScene("TestScene");
     }
     
-    public void OnChangeSpell()
-    {
-        Debug.Log("Change Spells");
-    }
-    
     public void OnPause()
     {
         Debug.Log("Clicked Pause");
@@ -51,4 +46,10 @@ public class ButtonManager : MonoBehaviour
 		Debug.Log("Clicked Quit");
 		SceneManager.LoadScene("TitleScene");
 	}
+
+    public void OnSpells()
+    {
+        Debug.Log("Clicked Spells");
+        uI.GetComponent<UIManager>().ButtonPress("spell");
+    }
 }
