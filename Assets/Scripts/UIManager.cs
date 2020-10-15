@@ -27,7 +27,7 @@ public class UIManager : MonoBehaviour
 	    gameObjects = GameObject.FindGameObjectsWithTag("showOnGame");
 	    pauseObjects = GameObject.FindGameObjectsWithTag("showOnPause");
 	    //settingsObjects = GameObject.FindGameObjectsWithTag("showOnSettings");
-	    //spellsObjects = GameObject.FindGameObjectsWithTag("showOnSpells");
+	    spellsObjects = GameObject.FindGameObjectsWithTag("showOnSpells");
 
 	    HideMenu(pauseObjects);
 	    HideMenu(settingsObjects);

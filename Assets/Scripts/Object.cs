@@ -7,7 +7,7 @@ public class Object : MonoBehaviour
 {
     public static List<Object> objects; //An easily accessible list of all the objects
 
-    public PlayerMovement player;
+    private PlayerMovement player;
     /*//Enum to store possible properties of objects
     // 0 - None
     // 1 - Dangerous
@@ -37,10 +37,10 @@ public class Object : MonoBehaviour
     public int properties;
     private ObjectProperties objProperties;
     */
-    public bool isGoal; //Determines whether or not the object is the end goal of the level
     // Start is called before the first frame update
     void Start()
     {
+        player = PlayerMovement.player;
         if (objects == null)
         {
             objects = new List<Object>();

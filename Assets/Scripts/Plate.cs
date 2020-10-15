@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Plate : Object
 {
-    bool pressed = true;
+    public bool pressed = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -25,14 +25,14 @@ public class Plate : Object
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.gameObject.name.Contains("Player") || collision.gameObject.name.Contains("Player"))
+        if(collision.gameObject.name.Contains("Moveable") || collision.gameObject.name.Contains("Player"))
         {
             pressed = true;
         }
     }
-    private void OnCollisionExit(Collision collision)
+    private void OnCollisionExit2D(Collision2D collision)
     {
-        if (collision.gameObject.name.Contains("Player") || collision.gameObject.name.Contains("Player"))
+        if (collision.gameObject.name.Contains("Moveable") || collision.gameObject.name.Contains("Player"))
         {
             pressed = false;
         }
