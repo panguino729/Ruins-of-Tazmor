@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Makes the object moveable by telekinesis
+/// </summary>
 public class Moveable : MonoBehaviour
 {
     public float moveStrength; //The strength of the force that telekinesis applies - could potentially make this different on different objects.

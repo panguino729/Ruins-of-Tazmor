@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// A plate that 
+/// </summary>
 public class Plate : Object
 {
     public bool pressed = false;
