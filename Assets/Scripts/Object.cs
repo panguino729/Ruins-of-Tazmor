@@ -37,7 +37,6 @@ public class Object : MonoBehaviour
     public int properties;
     private ObjectProperties objProperties;
     */
-    public bool isGoal; //Determines whether or not the object is the end goal of the level
     // Start is called before the first frame update
     void Start()
     {
