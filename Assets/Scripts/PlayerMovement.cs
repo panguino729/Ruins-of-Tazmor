@@ -104,6 +104,7 @@ public class PlayerMovement : MonoBehaviour
 
         return false;
     }
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
         switch (collision.gameObject.tag)
