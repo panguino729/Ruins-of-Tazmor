@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.UIElements;
-using UnityEngine.SceneManagement;
 using System.Runtime.CompilerServices;
 
 public class PlayerMovement : MonoBehaviour
@@ -105,13 +104,9 @@ public class PlayerMovement : MonoBehaviour
 
         return false;
     }
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.gameObject.name.Contains("Trap")) //Upon colliding with a trap, reset the level
-        {
-            Scene currScene = SceneManager.GetActiveScene();
-            SceneManager.LoadScene(currScene.buildIndex);
-        }
         switch (collision.gameObject.tag)
         {
             case "victory":

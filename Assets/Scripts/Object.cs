@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Object : MonoBehaviour
+public abstract class Object : MonoBehaviour
 {
     public static List<Object> objects; //An easily accessible list of all the objects
 
