@@ -3,7 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class Door : Object
+/// <summary>
+/// The goal of the level.
+/// </summary>
+public class Victory : Object
 {
     public Scene levelComplete;
 
@@ -12,11 +15,11 @@ public class Door : Object
     {
         if(name == null)
         {
-            name = "Door";
+            name = "Victory";
         }
         else
         {
-            name += "Door";
+            name += "Victory";
         }
     }
 
