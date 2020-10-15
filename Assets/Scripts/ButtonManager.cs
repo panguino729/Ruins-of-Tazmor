@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class ButtonManager : MonoBehaviour
 {
-    [SerializeField] private GameObject uIManager;
+    [SerializeField] private GameObject uI;
     
     // Start is called before the first frame update
     void Start()
@@ -29,8 +29,26 @@ public class ButtonManager : MonoBehaviour
         Debug.Log("Change Spells");
     }
     
-    public void OnMenu()
+    public void OnPause()
     {
-        uIManager.GetComponent<UIManager>().ButtonPress("pause)");
+        Debug.Log("Clicked Pause");
+		uI.GetComponent<UIManager>().ButtonPress("pause");
     }
+
+    public void OnResume()
+	{
+		Debug.Log("Clicked Resume");
+		uI.GetComponent<UIManager>().ButtonPress("resume");
+	}
+
+    public void OnSettings()
+	{
+		Debug.Log("Clicked Settings");
+	}
+
+    public void OnQuit()
+	{
+		Debug.Log("Clicked Quit");
+		SceneManager.LoadScene("TitleScene");
+	}
 }
