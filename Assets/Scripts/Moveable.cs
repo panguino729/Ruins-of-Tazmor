@@ -11,6 +11,14 @@ public class Moveable : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        if(moveStrength == 0)
+        {
+            moveStrength = 2;
+        }
+        if(maxVelocity == 0)
+        {
+            maxVelocity = 3;
+        }
         if(name == null)
         {
             name = "Moveable";

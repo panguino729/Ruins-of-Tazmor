@@ -5,9 +5,6 @@ using UnityEngine;
 public class Plate : Object
 {
     public bool pressed = false;
-    public Material blueMat;
-    public Material redMat;
-    public SpriteRenderer renderer;
     // Start is called before the first frame update
     void Start()
     {
@@ -31,15 +28,13 @@ public class Plate : Object
         if(collision.gameObject.name.Contains("Moveable") || collision.gameObject.name.Contains("Player"))
         {
             pressed = true;
-            renderer.material = redMat;
         }
     }
-    private void OnCollisionExit(Collision collision)
+    private void OnCollisionExit2D(Collision2D collision)
     {
         if (collision.gameObject.name.Contains("Moveable") || collision.gameObject.name.Contains("Player"))
         {
             pressed = false;
-            renderer.material = blueMat;
         }
     }
 }

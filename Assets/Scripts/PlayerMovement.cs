@@ -4,9 +4,11 @@ using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.UIElements;
 using UnityEngine.SceneManagement;
+using System.Runtime.CompilerServices;
 
 public class PlayerMovement : MonoBehaviour
 {
+    public static PlayerMovement player;
     private Rigidbody2D rb;
 
     private int jumpingCounter = 3;
@@ -20,6 +22,7 @@ public class PlayerMovement : MonoBehaviour
 
     void Start()
     {
+        player = this;
         name = "Player";
         startPos = this.transform.position;
         rb = GetComponent<Rigidbody2D>();
