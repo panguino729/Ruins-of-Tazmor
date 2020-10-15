@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.UIElements;
+using UnityEngine.SceneManagement;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -19,6 +20,7 @@ public class PlayerMovement : MonoBehaviour
 
     void Start()
     {
+        name = "Player";
         startPos = this.transform.position;
         rb = GetComponent<Rigidbody2D>();
         jumping = false;
@@ -102,12 +104,13 @@ public class PlayerMovement : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        if(collision.gameObject.name.Contains("Trap")) //Upon colliding with a trap, reset the level
+        {
+            Scene currScene = SceneManager.GetActiveScene();
+            SceneManager.LoadScene(currScene.buildIndex);
+        }
         switch (collision.gameObject.tag)
         {
-            case "trap":
-                this.transform.position = startPos; //There'll need to be a ResetLevel() method later - I'm just doing this as a placeholder.
-                this.transform.rotation = Quaternion.Euler(0, 0, 0);
-                break;
             case "victory":
                 //Occurs when the player reaches the end of the level
                 break;

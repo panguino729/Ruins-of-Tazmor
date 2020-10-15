@@ -3,14 +3,21 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class Door : MonoBehaviour
+public class Door : Object
 {
     public Scene levelComplete;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        if(name == null)
+        {
+            name = "Door";
+        }
+        else
+        {
+            name += "Door";
+        }
     }
 
     // Update is called once per frame
