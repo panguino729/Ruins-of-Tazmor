@@ -152,6 +152,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec0739c23f0cfca448c11fa96372f19d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 0}
+  isGoal: 0
   levelComplete:
     m_Handle: 0
 --- !u!212 &48038646
@@ -761,6 +763,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -2787110998869163050, guid: 8d3b017d529b9d4408e123d4783ff42f,
+        type: 3}
+      propertyPath: m_UsedByEffector
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -2787110998869163050, guid: 8d3b017d529b9d4408e123d4783ff42f,
+        type: 3}
+      propertyPath: m_EdgeRadius
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4100167163198879043, guid: 8d3b017d529b9d4408e123d4783ff42f,
         type: 3}
       propertyPath: m_Name
@@ -1539,10 +1551,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
-  objTag: moveable
-  moveStrength: 1
-  maxVelocity: 3
-  rb: {fileID: 0}
   isGoal: 0
 --- !u!1 &1265432744
 GameObject:
@@ -4049,10 +4057,10 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 45f47ea1dcabad943ad252da31e66ae9, type: 2}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 7
 --- !u!19719996 &1771968472
 TilemapCollider2D:
@@ -4145,7 +4153,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2052119959}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.05, y: 0.68, z: 0}
+  m_LocalPosition: {x: 0.596, y: 0.39, z: 0}
   m_LocalScale: {x: 6.200383, y: 6.200383, z: 6.200383}
   m_Children: []
   m_Father: {fileID: 0}
