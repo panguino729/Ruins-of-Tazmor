@@ -8,6 +8,8 @@ public class PlayerMovement : MonoBehaviour
 {
     private Rigidbody2D rb;
 
+    private int jumpingCounter = 3;
+
     private bool jumping;
     Vector3 startPos;
     public float maxSpeed = 1.0f;
@@ -85,7 +87,15 @@ public class PlayerMovement : MonoBehaviour
         
         if(rb.velocity.y == 0)
         {
-            jumping = false;
+            if (jumpingCounter != 0)
+            {
+                jumpingCounter -= 1;
+            }
+            else
+            {
+                jumping = false;
+                jumpingCounter = 3;
+            } 
         }
 
         return false;
