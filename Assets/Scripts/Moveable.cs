@@ -56,6 +56,21 @@ public class Moveable : MonoBehaviour
         //Handles the telekinesis - applies a force toward the mouse cursor on the object. 
         //May need to add something to make sure multiple things can't be held at once if they slightly overlap.
         {
+            // Do a linecast to check if this object is in line of sight of the player
+            // EVERYTHING that has a collider and should not be checked against (boxes, the player, whatever else)
+            // should be on a layer OTHER THAN LAYER 0!
+            LayerMask losMask = LayerMask.GetMask("Default");
+            RaycastHit2D lineOfSight = Physics2D.Linecast(PlayerMovement.player.transform.position, transform.position, losMask);
+            if (lineOfSight.collider != null)
+            {
+                Debug.DrawLine(PlayerMovement.player.gameObject.transform.position, lineOfSight.point, Color.red);
+                isBeingHeld = false;
+            }
+            else
+            {
+                Debug.DrawLine(PlayerMovement.player.gameObject.transform.position, transform.position, Color.blue);
+            }
+
             Vector3 mousePos = Input.mousePosition;
             mousePos = Input.mousePosition;
             mousePos = Camera.main.ScreenToWorldPoint(mousePos);
