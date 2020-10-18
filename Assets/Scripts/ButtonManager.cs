@@ -52,4 +52,10 @@ public class ButtonManager : MonoBehaviour
         Debug.Log("Clicked Spells");
         uI.GetComponent<UIManager>().ButtonPress("spell");
     }
+
+    public void OnCloseSpells()
+    {
+        Debug.Log("Clicked Close Spells");
+        uI.GetComponent<UIManager>().ButtonPress("spellClose");
+    }
 }

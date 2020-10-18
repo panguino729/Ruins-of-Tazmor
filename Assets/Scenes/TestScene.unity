@@ -128,6 +128,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4202775621495959801, guid: 0ed199ba1e9f9495aa106cc69780c839,
+        type: 3}
+      propertyPath: uI
+      value: 
+      objectReference: {fileID: 214262437}
+    - target: {fileID: 6783372223097093043, guid: 0ed199ba1e9f9495aa106cc69780c839,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnCloseSpells
+      objectReference: {fileID: 0}
     - target: {fileID: 8349471156356946916, guid: 0ed199ba1e9f9495aa106cc69780c839,
         type: 3}
       propertyPath: uI

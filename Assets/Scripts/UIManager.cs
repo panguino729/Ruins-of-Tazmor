@@ -123,19 +123,23 @@ public class UIManager : MonoBehaviour
 	/// <aparm name="name"Name of button pressed</param>
 	public void ButtonPress(string name)
 	{
-		if (name == "pause")
-		{
-			Debug.Log("click Pause");
-			MenuControl(pauseObjects, MenuState.Pause);
-		}
+        if (name == "pause")
+        {
+            Debug.Log("click Pause");
+            MenuControl(pauseObjects, MenuState.Pause);
+        }
         else if (name == "resume")
-		{
-			MenuControl(pauseObjects, MenuState.Game);
-		}
-		else if (name == "spell")
-		{
-			MenuControl(spellsObjects, MenuState.Spells);
-		}
+        {
+            MenuControl(pauseObjects, MenuState.Game);
+        }
+        else if (name == "spell")
+        {
+            MenuControl(spellsObjects, MenuState.Spells);
+        }
+        else if (name == "spellClose")
+        {
+            MenuControl(spellsObjects, MenuState.Game);
+        }
 	}
 
 }
