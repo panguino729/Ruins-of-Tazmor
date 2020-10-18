@@ -2984,7 +2984,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pressed: 0
-  indentHeight: 0.1
+  indentHeight: 0
 --- !u!212 &1967885854
 SpriteRenderer:
   m_ObjectHideFlags: 0

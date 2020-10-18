@@ -8,9 +8,11 @@ using UnityEngine;
 public class Plate : Object
 {
     public bool pressed = false;
+    private int numPresses = 0;
     private float initialYScale;
     private BoxCollider2D collider;
     private float initialHeight;
+    int framesSincePressed = 0;
     public float indentHeight; //The % height that the plate changes each frame upon being pressed - should probably be about 0.1
     GameObject collided;
     // Start is called before the first frame update
@@ -18,7 +20,7 @@ public class Plate : Object
     {
         if(indentHeight == 0)
         {
-            indentHeight = 0.1f;
+            indentHeight = 0.025f;
         }
         initialYScale = transform.localScale.y;
         collider = GetComponent<BoxCollider2D>();
@@ -42,10 +44,14 @@ public class Plate : Object
             gameObject.transform.localPosition = new Vector3(transform.localPosition.x, transform.localPosition.y - indentHeight * initialHeight, transform.localPosition.z);
             collided.gameObject.transform.localPosition = new Vector3(collided.gameObject.transform.localPosition.x, collided.gameObject.transform.localPosition.y - indentHeight * initialHeight, collided.gameObject.transform.localPosition.z);
         }
-        else if(!pressed && transform.localScale.y < 1.0f * initialYScale)
+        else if(!pressed && transform.localScale.y < 1.0f * initialYScale && framesSincePressed > 5)
         {
             gameObject.transform.localScale = new Vector3(transform.localScale.x, transform.localScale.y + indentHeight * initialYScale, transform.localScale.z);
             gameObject.transform.localPosition = new Vector3(transform.localPosition.x, transform.localPosition.y + indentHeight * initialHeight, transform.localPosition.z);
+        }
+        if(!pressed)
+        {
+            framesSincePressed++;
         }
     }
     private void OnCollisionEnter2D(Collision2D collision)
@@ -54,13 +60,20 @@ public class Plate : Object
         {
             collided = collision.gameObject;
             pressed = true;
+            numPresses++;
         }
     }
     private void OnCollisionExit2D(Collision2D collision)
     {
         if (collision.gameObject.name.Contains("Moveable") || collision.gameObject.name.Contains("Player"))
         {
-            pressed = false;
+            numPresses--;
+            if (numPresses == 0)
+            {
+                pressed = false;
+
+                framesSincePressed = 0;
+            }
         }
     }
 }
