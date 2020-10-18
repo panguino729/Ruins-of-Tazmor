@@ -582,6 +582,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 4100167163198879043, guid: 8d3b017d529b9d4408e123d4783ff42f,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4100167163198879052, guid: 8d3b017d529b9d4408e123d4783ff42f,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -696,9 +701,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72e9b247853cb534483e2c109e06b506, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  reappears: 1
-  plates:
-  - {fileID: 440139136}
+  reappears: 0
+  plates: []
   open: 0
 --- !u!212 &767899784
 SpriteRenderer:
@@ -1027,7 +1031,7 @@ GameObject:
   - component: {fileID: 1077242601}
   - component: {fileID: 1077242604}
   - component: {fileID: 1077242600}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Temp Obstacle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
