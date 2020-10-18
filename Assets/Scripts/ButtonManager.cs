@@ -21,7 +21,7 @@ public class ButtonManager : MonoBehaviour
     
     public void OnStart()
     {
-        SceneManager.LoadScene("TestScene");
+        SceneManager.LoadScene("Level_01");
     }
     
     public void OnPause()
