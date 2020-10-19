@@ -38,20 +38,28 @@ public class Plate : Object
     // Update is called once per frame
     void Update()
     {
-        if (pressed && transform.localScale.y > 0.5f * initialYScale)
+        if (numPresses > 0 && transform.localScale.y > 0.5f * initialYScale)
         {
             gameObject.transform.localScale = new Vector3(transform.localScale.x, transform.localScale.y - indentHeight * initialYScale, transform.localScale.z);
             gameObject.transform.localPosition = new Vector3(transform.localPosition.x, transform.localPosition.y - indentHeight * initialHeight, transform.localPosition.z);
             collided.gameObject.transform.localPosition = new Vector3(collided.gameObject.transform.localPosition.x, collided.gameObject.transform.localPosition.y - indentHeight * initialHeight, collided.gameObject.transform.localPosition.z);
         }
-        else if(!pressed && transform.localScale.y < 1.0f * initialYScale && framesSincePressed > 5)
+        else if(numPresses <= 0 && transform.localScale.y < 1.0f * initialYScale && framesSincePressed > 5)
         {
             gameObject.transform.localScale = new Vector3(transform.localScale.x, transform.localScale.y + indentHeight * initialYScale, transform.localScale.z);
             gameObject.transform.localPosition = new Vector3(transform.localPosition.x, transform.localPosition.y + indentHeight * initialHeight, transform.localPosition.z);
         }
-        if(!pressed)
+        if(numPresses == 0)
         {
             framesSincePressed++;
+        }
+        if(transform.localScale.y <= 0.5f * initialYScale)
+        {
+            pressed = true;
+        }
+        else
+        {
+            pressed = false;
         }
     }
     private void OnCollisionEnter2D(Collision2D collision)
@@ -59,7 +67,6 @@ public class Plate : Object
         if(collision.gameObject.name.Contains("Moveable") || collision.gameObject.name.Contains("Player"))
         {
             collided = collision.gameObject;
-            pressed = true;
             numPresses++;
         }
     }
@@ -69,9 +76,7 @@ public class Plate : Object
         {
             numPresses--;
             if (numPresses == 0)
-            {
-                pressed = false;
-
+            { 
                 framesSincePressed = 0;
             }
         }
