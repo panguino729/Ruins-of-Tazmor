@@ -7,7 +7,6 @@ using System.Runtime.CompilerServices;
 
 public class PlayerMovement : MonoBehaviour
 {
-    [SerializeField] private LayerMask platformLayerMask;
     public static PlayerMovement player;
     private Rigidbody2D rb;
     private BoxCollider2D boxCollider2D;
