@@ -546,6 +546,11 @@ PrefabInstance:
       propertyPath: m_EdgeRadius
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4100167163198879042, guid: 8d3b017d529b9d4408e123d4783ff42f,
+        type: 3}
+      propertyPath: platformLayerMask.m_Bits
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4100167163198879043, guid: 8d3b017d529b9d4408e123d4783ff42f,
         type: 3}
       propertyPath: m_Name
@@ -611,7 +616,32 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 4100167163198879053, guid: 8d3b017d529b9d4408e123d4783ff42f,
+        type: 3}
+      propertyPath: m_GravityScale
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5230955238879819566, guid: 8d3b017d529b9d4408e123d4783ff42f,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 0.39
+      objectReference: {fileID: 0}
+    - target: {fileID: 5230955238879819566, guid: 8d3b017d529b9d4408e123d4783ff42f,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 0.94
+      objectReference: {fileID: 0}
+    - target: {fileID: 5230955238879819566, guid: 8d3b017d529b9d4408e123d4783ff42f,
+        type: 3}
+      propertyPath: m_Offset.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5230955238879819566, guid: 8d3b017d529b9d4408e123d4783ff42f,
+        type: 3}
+      propertyPath: m_Offset.y
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: [{fileID: 0}]
   m_SourcePrefab: {fileID: 100100000, guid: 8d3b017d529b9d4408e123d4783ff42f, type: 3}
 --- !u!1 &767899781
 GameObject:
@@ -1038,7 +1068,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 1077242599}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 45f47ea1dcabad943ad252da31e66ae9, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -3281,7 +3311,7 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
-  m_Material: {fileID: 6200000, guid: 45f47ea1dcabad943ad252da31e66ae9, type: 2}
+  m_Material: {fileID: 6200000, guid: 065e62d54c64c5142956194e3a9d7676, type: 2}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 1
