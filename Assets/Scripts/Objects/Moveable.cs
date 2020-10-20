@@ -64,20 +64,22 @@ public class Moveable : MonoBehaviour
             if (lineOfSight.collider != null)
             {
                 Debug.DrawLine(PlayerMovement.player.gameObject.transform.position, lineOfSight.point, Color.red);
-                isBeingHeld = false;
+                rb.gravityScale = 1;
+                return;
             }
             else
             {
                 Debug.DrawLine(PlayerMovement.player.gameObject.transform.position, transform.position, Color.blue);
-            }
+                rb.gravityScale = 0;
 
-            Vector3 mousePos = Input.mousePosition;
-            mousePos = Input.mousePosition;
-            mousePos = Camera.main.ScreenToWorldPoint(mousePos);
-            isBeingHeld = true;
-            Vector3 vtoc = mousePos - this.transform.position;
-            float distToMouseSqr = vtoc.x * vtoc.x + vtoc.y * vtoc.y;
-            rb.AddForce(moveStrength * distToMouseSqr * (mousePos - this.transform.position));
+                Vector3 mousePos = Input.mousePosition;
+                mousePos = Input.mousePosition;
+                mousePos = Camera.main.ScreenToWorldPoint(mousePos);
+                isBeingHeld = true;
+                Vector3 vtoc = mousePos - this.transform.position;
+                float distToMouseSqr = vtoc.x * vtoc.x + vtoc.y * vtoc.y;
+                rb.AddForce(moveStrength * distToMouseSqr * (mousePos - this.transform.position));
+            }
         }
     }
     private void OnMouseDown() //Checks if the player left clicks on a moveable object in order to apply telekinesis
