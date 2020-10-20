@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 1388706747438451310}
   - component: {fileID: 8522488188492380774}
   - component: {fileID: 5448264282206289624}
+  - component: {fileID: 2506220766757718916}
   m_Layer: 0
   m_Name: Tile
   m_TagString: Untagged
@@ -109,3 +110,21 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &2506220766757718916
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5786999009056072495}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 476d9ab52cd494e468fd1f6acdbe6072, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  plates: []
+  needsPlates: 0
+  platesEnable: 0
+  bounceDirX: 0
+  bounceDirY: 0
+  bounceMag: 0
