@@ -2,12 +2,19 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CollisionManager : MonoBehaviour
+public class Bounceable : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()
     {
-        
+        if (name == null)
+        {
+            name = "Bounceable";
+        }
+        else
+        {
+            name += "Bounceable";
+        }
     }
 
     // Update is called once per frame
