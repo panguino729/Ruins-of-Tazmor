@@ -40,7 +40,7 @@ public class Moveable : MonoBehaviour
         {
             rb.velocity = new Vector2(0, 0);
         }
-        if (rb.velocity.x != 0 || rb.velocity.y != 0) //Only triggers if the object is moving, to limit the calls per frame
+        if ((rb.velocity.x != 0 || rb.velocity.y != 0) && isBeingHeld) //Only triggers if the object is moving, to limit the calls per frame
         {
             float velocityMag = rb.velocity.magnitude;
             if (velocityMag >= maxVelocity) //If the object is moving faster than its maximum velocity, applies a force in the opposite direction of that velocity to slow it down.
