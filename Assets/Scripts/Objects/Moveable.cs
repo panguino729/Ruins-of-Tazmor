@@ -9,11 +9,12 @@ public class Moveable : MonoBehaviour
 {
     public float moveStrength; //The strength of the force that telekinesis applies - could potentially make this different on different objects.
     public float maxVelocity; //The maximum velocity during telekinesis.
-    public Rigidbody2D rb;
+    private Rigidbody2D rb;
     private bool isBeingHeld = false;
     // Start is called before the first frame update
     void Start()
     {
+        gameObject.layer = 8;
         if(moveStrength == 0)
         {
             moveStrength = 2;
