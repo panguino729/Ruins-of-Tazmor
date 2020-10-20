@@ -28,7 +28,7 @@ public class Trap : Object
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.name == "Player") //Upon colliding with a trap, reset the level
+        if (collision.gameObject.name.Contains("Player")) //Upon colliding with a trap, reset the level
         {
             Scene currScene = SceneManager.GetActiveScene();
             SceneManager.LoadScene(currScene.buildIndex);
