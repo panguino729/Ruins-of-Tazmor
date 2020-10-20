@@ -68,7 +68,6 @@ public class BouncePad : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        Debug.Log(bounceDir);
         if (!needsPlates || (platesEnable && platesPressed) || (!platesEnable && !platesPressed)) //Bounces if the bouncepad: 1. Does not care about plates 
             //2. Cares about plates, plates enable the pad, and all plates are pressed
             //3. Cares about plates, plates disable the pad, and not all plates are pressed
