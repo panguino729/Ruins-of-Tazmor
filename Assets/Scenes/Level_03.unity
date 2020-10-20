@@ -207,6 +207,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Temp Door
       objectReference: {fileID: 0}
+    - target: {fileID: 6531310009765603384, guid: b844a21dc09955841ae896513d7499dd,
+        type: 3}
+      propertyPath: plates.Array.data[0]
+      value: 
+      objectReference: {fileID: 1388997673}
+    - target: {fileID: 6531310009765603384, guid: b844a21dc09955841ae896513d7499dd,
+        type: 3}
+      propertyPath: plates.Array.data[1]
+      value: 
+      objectReference: {fileID: 1190614993}
     - target: {fileID: 6531310009765603386, guid: b844a21dc09955841ae896513d7499dd,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3021,6 +3031,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a0e8944e03c207244bf25d7a6e6d0dda, type: 3}
+--- !u!114 &1190614993 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4388212718942523953, guid: a0e8944e03c207244bf25d7a6e6d0dda,
+    type: 3}
+  m_PrefabInstance: {fileID: 197675614}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 73f7ab00d8790b84dba6e0ec52f642f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1218357864
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3090,6 +3112,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8d3b017d529b9d4408e123d4783ff42f, type: 3}
+--- !u!114 &1388997673 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4388212718942523953, guid: a0e8944e03c207244bf25d7a6e6d0dda,
+    type: 3}
+  m_PrefabInstance: {fileID: 1040402030}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 73f7ab00d8790b84dba6e0ec52f642f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1584618467
 PrefabInstance:
   m_ObjectHideFlags: 0
