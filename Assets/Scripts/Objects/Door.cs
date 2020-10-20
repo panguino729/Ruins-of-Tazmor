@@ -37,6 +37,7 @@ public class Door : MonoBehaviour
             if(!plates[i].pressed)
             {
                 open = false;
+                break;
             }
         }
         if(open)

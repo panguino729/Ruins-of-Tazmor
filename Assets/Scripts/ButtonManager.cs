@@ -21,7 +21,7 @@ public class ButtonManager : MonoBehaviour
     
     public void OnStart()
     {
-        SceneManager.LoadScene("TestScene");
+        SceneManager.LoadScene("Level_01");
     }
     
     public void OnPause()
@@ -51,5 +51,11 @@ public class ButtonManager : MonoBehaviour
     {
         Debug.Log("Clicked Spells");
         uI.GetComponent<UIManager>().ButtonPress("spell");
+    }
+
+    public void OnCloseSpells()
+    {
+        Debug.Log("Clicked Close Spells");
+        uI.GetComponent<UIManager>().ButtonPress("spellClose");
     }
 }
