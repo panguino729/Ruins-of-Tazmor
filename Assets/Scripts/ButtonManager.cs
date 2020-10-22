@@ -43,9 +43,10 @@ public class ButtonManager : MonoBehaviour
 		uI.GetComponent<UIManager>().ButtonPress("resume");
 	}
 
-    public void OnSettings()
+    public void OnRestartLevel()
 	{
-		Debug.Log("Clicked Settings");
+		Debug.Log("Clicked Restart Level");
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
 	}
 
     public void OnQuit()
@@ -69,7 +70,7 @@ public class ButtonManager : MonoBehaviour
     public void OnNext()
     {
         Debug.Log("Clicked Next Level");
-        SceneManager.LoadScene("Level_01");
+        SceneManager.LoadScene(levels[levelIndex + 1]);
         levelIndex++;
     }
 }
