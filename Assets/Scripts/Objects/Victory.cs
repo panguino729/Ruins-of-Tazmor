@@ -32,11 +32,11 @@ public class Victory : Object
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-       if(collision.gameObject.name.Contains("Player"))
-            {
-                //SceneManager.SetActiveScene(levelComplete);
-                SceneManager.LoadScene("LevelComplete");
-                source.Play();            
-            }
-       }
+        if(collision.gameObject.name.Contains("Player"))
+        {
+            //SceneManager.SetActiveScene(levelComplete);
+            source.Play();
+            SceneManager.LoadScene("LevelComplete");          
+        }
+    }
 }
