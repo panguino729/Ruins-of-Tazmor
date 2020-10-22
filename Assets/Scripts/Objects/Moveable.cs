@@ -12,6 +12,8 @@ public class Moveable : MonoBehaviour
     private Rigidbody2D rb;
     public LineRenderer line;
     private bool isBeingHeld = false;
+    public AudioSource source;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -91,6 +93,15 @@ public class Moveable : MonoBehaviour
             }
 
             line.material.SetTextureScale("_MainTex", new Vector2(1, 1));
+            if(!source.isPlaying)
+                source.Play();
+        }
+        else
+        {
+            if (source.isPlaying)
+            {
+                source.Stop();
+            }
         }
     }
     private void OnMouseDown() //Checks if the player left clicks on a moveable object in order to apply telekinesis
