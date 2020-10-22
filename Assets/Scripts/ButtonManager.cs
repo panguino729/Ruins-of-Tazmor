@@ -6,11 +6,18 @@ using UnityEngine.SceneManagement;
 public class ButtonManager : MonoBehaviour
 {
     [SerializeField] private GameObject uI;
+
+    private List<string> levels;
+    private int levelIndex = 0;
     
     // Start is called before the first frame update
     void Start()
     {
-        
+        levels = new List<string>();
+        levels.Add("Level_01");
+        levels.Add("Level_02");
+        levels.Add("Level_03");
+        levels.Add("Level_04");
     }
 
     // Update is called once per frame
@@ -57,5 +64,12 @@ public class ButtonManager : MonoBehaviour
     {
         Debug.Log("Clicked Close Spells");
         uI.GetComponent<UIManager>().ButtonPress("spellClose");
+    }
+
+    public void OnNext()
+    {
+        Debug.Log("Clicked Next Level");
+        SceneManager.LoadScene("Level_01");
+        levelIndex++;
     }
 }
