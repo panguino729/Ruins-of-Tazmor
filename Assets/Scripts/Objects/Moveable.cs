@@ -103,6 +103,7 @@ public class Moveable : MonoBehaviour
         if(collision.gameObject.name.Contains("Player"))
         {
             isBeingHeld = false;
+            rb.gravityScale = 1;
         }
     }
 }
