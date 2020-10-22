@@ -8,6 +8,8 @@ using UnityEngine;
 /// </summary>
 public class Trap : Object
 {
+    public AudioSource source;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -30,6 +32,7 @@ public class Trap : Object
     {
         if (collision.gameObject.name.Contains("Player")) //Upon colliding with a trap, reset the level
         {
+            source.Play();
             Scene currScene = SceneManager.GetActiveScene();
             SceneManager.LoadScene(currScene.buildIndex);
         }
