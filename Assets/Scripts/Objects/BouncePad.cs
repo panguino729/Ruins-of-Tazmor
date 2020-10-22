@@ -86,7 +86,6 @@ public class BouncePad : MonoBehaviour
             {
                 Rigidbody2D rb = collision.gameObject.GetComponent<Rigidbody2D>();
                 rb.AddForce(bounceMag * bounceDir);
-                Debug.Log("Bounce");
             }
         }
     }
