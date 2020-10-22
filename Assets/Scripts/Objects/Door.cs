@@ -14,9 +14,9 @@ public class Door : MonoBehaviour
     public bool reappears; //Determines whether or not the door reappears when the plates are no longer pressed
     public List<Plate> plates;
     public bool open = false;
-    public AudioSource victory;
     BoxCollider2D bCollider;
-    SpriteRenderer spRender;
+    SpriteRenderer spRender;    
+
     // Start is called before the first frame update
     void Start()
     {
@@ -79,7 +79,6 @@ public class Door : MonoBehaviour
                 currRotation -= rotationDegrees;
             }
             bCollider.isTrigger = false;
-            victory.Play();
         }
     }
 }

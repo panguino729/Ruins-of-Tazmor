@@ -17,6 +17,8 @@ public class BouncePad : MonoBehaviour
     public float bounceMag;
     private bool justPressedOrUnpressed;
     private Vector2 bounceDir;
+    public AudioSource source;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -84,6 +86,7 @@ public class BouncePad : MonoBehaviour
         {
             if (collision.gameObject.name.Contains("Bounceable")) //Upon colliding the bounce pad, apply a force to bounce the object
             {
+                source.Play();
                 Rigidbody2D rb = collision.gameObject.GetComponent<Rigidbody2D>();
                 rb.AddForce(bounceMag * bounceDir);
                 Debug.Log("Bounce");

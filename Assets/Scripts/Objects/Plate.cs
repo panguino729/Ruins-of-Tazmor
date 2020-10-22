@@ -15,6 +15,8 @@ public class Plate : Object
     int framesSincePressed = 0;
     public float indentHeight; //The % height that the plate changes each frame upon being pressed - should probably be about 0.1
     GameObject collided;
+    public AudioSource source;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -53,11 +55,12 @@ public class Plate : Object
         {
             framesSincePressed++;
         }
-        if(transform.localScale.y <= 0.5f * initialYScale)
+        if (transform.localScale.y <= 0.5f * initialYScale && !pressed)
         {
             pressed = true;
+            source.Play();
         }
-        else
+        else if (transform.localScale.y >= 1.0f * initialYScale)
         {
             pressed = false;
         }

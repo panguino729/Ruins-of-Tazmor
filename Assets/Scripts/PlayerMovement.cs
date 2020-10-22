@@ -52,7 +52,7 @@ public class PlayerMovement : MonoBehaviour
         {
             float jumpV = 15f;
             rb.velocity = Vector2.up * jumpV;
-            jump.Play();
+            //jump.Play();
         }
     }
 
