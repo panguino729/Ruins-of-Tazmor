@@ -48,30 +48,16 @@ public class Door : MonoBehaviour
         }
         if (open)
         {
-            if (rotatesAboutX && transform.rotation.y < 180)
-            {
-                transform.rotation = Quaternion.Euler(transform.rotation.x, transform.rotation.y + rotationDegrees, transform.rotation.z);
-            }
-            else if (!rotatesAboutX && transform.rotation.x < 180)
-            {
-                transform.rotation = Quaternion.Euler(transform.rotation.x + rotationDegrees, transform.rotation.y, transform.rotation.z);
-            }
-            if (!reappears && transform.rotation.y >= 180)
+            if (!reappears)
             {
                 Destroy(gameObject);
             }
+            spRender.enabled = false;
             bCollider.isTrigger = true;
         }
         else
         {
-            if (rotatesAboutX && transform.rotation.y > 0)
-            {
-                transform.rotation = Quaternion.Euler(transform.rotation.x, transform.rotation.y - rotationDegrees, transform.rotation.z);
-            }
-            else if (!rotatesAboutX && transform.rotation.x > 0)
-            {
-                transform.rotation = Quaternion.Euler(transform.rotation.x - rotationDegrees, transform.rotation.y, transform.rotation.z);
-            }
+            spRender.enabled = true;
             bCollider.isTrigger = false;
         }
     }
