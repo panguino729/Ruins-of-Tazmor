@@ -177,6 +177,11 @@ PrefabInstance:
       propertyPath: m_Navigation.m_Mode
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8349471157906977280, guid: 0ed199ba1e9f9495aa106cc69780c839,
+        type: 3}
+      propertyPath: m_Text
+      value: "Telekinisis\n\t\n\tClick and drag on crates to move with telekinisis"
+      objectReference: {fileID: 0}
     - target: {fileID: 8349471157964323792, guid: 0ed199ba1e9f9495aa106cc69780c839,
         type: 3}
       propertyPath: m_Name
