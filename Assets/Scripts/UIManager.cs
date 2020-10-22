@@ -6,7 +6,6 @@ public enum MenuState
 {
     Game,
     Pause,
-    Settings,
     Spells
 }
 
@@ -14,7 +13,6 @@ public class UIManager : MonoBehaviour
 {
 	[SerializeField] private GameObject[] gameObjects;
     [SerializeField] private GameObject[] pauseObjects;
-    [SerializeField] private GameObject[] settingsObjects;
     [SerializeField] private GameObject[] spellsObjects;
 
     public MenuState currentMenuState = MenuState.Game;
@@ -26,11 +24,9 @@ public class UIManager : MonoBehaviour
 
 	    gameObjects = GameObject.FindGameObjectsWithTag("showOnGame");
 	    pauseObjects = GameObject.FindGameObjectsWithTag("showOnPause");
-	    //settingsObjects = GameObject.FindGameObjectsWithTag("showOnSettings");
 	    spellsObjects = GameObject.FindGameObjectsWithTag("showOnSpells");
 
 	    HideMenu(pauseObjects);
-	    HideMenu(settingsObjects);
 	    HideMenu(spellsObjects);
     }
 

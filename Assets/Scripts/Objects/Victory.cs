@@ -9,6 +9,7 @@ using UnityEngine.SceneManagement;
 public class Victory : Object
 {
     public Scene levelComplete;
+    public AudioSource source;
 
     // Start is called before the first frame update
     void Start()
@@ -35,6 +36,7 @@ public class Victory : Object
             {
                 //SceneManager.SetActiveScene(levelComplete);
                 SceneManager.LoadScene("LevelComplete");
+                source.Play();            
             }
        }
 }
