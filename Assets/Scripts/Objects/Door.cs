@@ -8,8 +8,9 @@ using UnityEngine;
 /// </summary>
 public class Door : MonoBehaviour
 {
-    public bool rotatesAboutX; //If true, rotations about X axis (i.e. up and down). False = about y axis.
-    public int rotationDegrees;
+    public float currRotation = 0;
+    public bool isYRotation; //If true, changes y rotation. If false, x rotation.
+    public float rotationDegrees;
     public bool reappears; //Determines whether or not the door reappears when the plates are no longer pressed
     public List<Plate> plates;
     public bool open = false;
@@ -20,7 +21,7 @@ public class Door : MonoBehaviour
     {
         if (rotationDegrees == 0)
         {
-            rotationDegrees = 10;
+            rotationDegrees = 2.5f;
         }
         bCollider = GetComponent<BoxCollider2D>();
         spRender = GetComponent<SpriteRenderer>();
@@ -48,16 +49,34 @@ public class Door : MonoBehaviour
         }
         if (open)
         {
+            if(isYRotation && currRotation < 90)
+            {
+                transform.Rotate(new Vector3(rotationDegrees, 0, 0));
+                currRotation += rotationDegrees;
+            }
+            else if(!isYRotation && currRotation < 90)
+            {
+                transform.Rotate(new Vector3(0, rotationDegrees, 0));
+                currRotation += rotationDegrees;
+            }
             if (!reappears)
             {
                 Destroy(gameObject);
             }
-            spRender.enabled = false;
             bCollider.isTrigger = true;
         }
         else
         {
-            spRender.enabled = true;
+            if (isYRotation && currRotation > 0)
+            {
+                transform.Rotate(new Vector3(-rotationDegrees, 0, 0));
+                currRotation -= rotationDegrees;
+            }
+            else if (!isYRotation && currRotation > 0)
+            {
+                transform.Rotate(new Vector3(0, -rotationDegrees, 0));
+                currRotation -= rotationDegrees;
+            }
             bCollider.isTrigger = false;
         }
     }
