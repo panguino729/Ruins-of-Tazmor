@@ -13,6 +13,9 @@ public class PlayerMovement : MonoBehaviour
     private bool jumping;
     Vector3 startPos;
 
+    public AudioSource jump;
+    public AudioSource telekinesis;
+
     void Start()
     {
         player = this;
@@ -49,6 +52,7 @@ public class PlayerMovement : MonoBehaviour
         {
             float jumpV = 15f;
             rb.velocity = Vector2.up * jumpV;
+            jump.Play();
         }
     }
 
