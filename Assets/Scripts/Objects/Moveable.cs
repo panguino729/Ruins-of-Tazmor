@@ -90,7 +90,7 @@ public class Moveable : MonoBehaviour
                 rb.AddForce(moveStrength * distToMouseSqr * (mousePos - this.transform.position));
             }
 
-            line.material.SetTextureScale("_MainTex", new Vector2((line.GetPosition(1) - line.GetPosition(0)).magnitude, 1));
+            line.material.SetTextureScale("_MainTex", new Vector2(1, 1));
         }
     }
     private void OnMouseDown() //Checks if the player left clicks on a moveable object in order to apply telekinesis
