@@ -17,6 +17,8 @@ public class BouncePad : MonoBehaviour
     public float bounceMag;
     private bool justPressedOrUnpressed;
     private Vector2 bounceDir;
+    public AudioSource source;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -51,7 +53,7 @@ public class BouncePad : MonoBehaviour
                     "If you don't want to switch the bouncepad on/off with plates, disable needsPlates. " +
                     "Otherwise, add plates to the list.");
             }
-            for (int i = 0; i < plates.Count; i++)
+            for (int i = 0; i < plates.Count; i++) //Checks all of the plates, if applicable, to determine if the bounce pad should be on or off.
             {
                 if (!plates[i].pressed)
                 {
@@ -84,6 +86,7 @@ public class BouncePad : MonoBehaviour
         {
             if (collision.gameObject.name.Contains("Bounceable")) //Upon colliding the bounce pad, apply a force to bounce the object
             {
+                source.Play();
                 Rigidbody2D rb = collision.gameObject.GetComponent<Rigidbody2D>();
                 rb.AddForce(bounceMag * bounceDir);
             }

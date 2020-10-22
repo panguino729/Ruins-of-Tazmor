@@ -12,6 +12,8 @@ public class Moveable : MonoBehaviour
     private Rigidbody2D rb;
     public LineRenderer line;
     private bool isBeingHeld = false;
+    public AudioSource source;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -63,12 +65,14 @@ public class Moveable : MonoBehaviour
             // EVERYTHING that has a collider and should not be checked against (boxes, the player, whatever else)
             // should be on a layer OTHER THAN LAYER 0!
             LayerMask losMask = LayerMask.GetMask("Default");
-            RaycastHit2D lineOfSight = Physics2D.Linecast(PlayerMovement.player.transform.position, transform.position, losMask);
+            Vector3 playerPos = PlayerMovement.player.gameObject.transform.position;
+            RaycastHit2D lineOfSight = Physics2D.Linecast(playerPos, transform.position, losMask);
+            
 
             if (lineOfSight.collider != null)
             {
-                Debug.DrawLine(PlayerMovement.player.gameObject.transform.position, lineOfSight.point, Color.red);
-                line.SetPositions(new Vector3[]{ PlayerMovement.player.gameObject.transform.position, lineOfSight.point});
+                Debug.DrawLine(playerPos, lineOfSight.point, Color.red);
+                line.SetPositions(new Vector3[]{ playerPos, lineOfSight.point});
                 line.startColor = line.endColor = Color.red;
                 
                 rb.gravityScale = 1;
@@ -76,7 +80,7 @@ public class Moveable : MonoBehaviour
             else // If there's no collider in the way, do what we'd normally do for telekinesis
             {
                 Debug.DrawLine(PlayerMovement.player.gameObject.transform.position, transform.position, Color.blue);
-                line.SetPositions(new Vector3[] { PlayerMovement.player.gameObject.transform.position, transform.position });
+                line.SetPositions(new Vector3[] { playerPos, transform.position });
                 line.startColor = line.endColor = Color.blue;
 
                 rb.gravityScale = 0;
@@ -91,6 +95,15 @@ public class Moveable : MonoBehaviour
             }
 
             line.material.SetTextureScale("_MainTex", new Vector2(1, 1));
+            if(!source.isPlaying)
+                source.Play();
+        }
+        else
+        {
+            if (source.isPlaying)
+            {
+                source.Stop();
+            }
         }
     }
     private void OnMouseDown() //Checks if the player left clicks on a moveable object in order to apply telekinesis
@@ -112,8 +125,9 @@ public class Moveable : MonoBehaviour
     {
         if(collision.gameObject.name.Contains("Player"))
         {
-            isBeingHeld = false;
+            line.enabled = false;
             rb.gravityScale = 1;
+            isBeingHeld = false;
         }
     }
 }
