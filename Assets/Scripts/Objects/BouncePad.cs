@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -26,7 +27,7 @@ public class BouncePad : MonoBehaviour
         }
         if(bounceMag == 0)
         {
-            bounceMag = 5;
+            bounceMag = 1000;
         }
         bounceDir = (new Vector2(bounceDirX, bounceDirY)).normalized; //Normalized direction vector
         if (name == null)
@@ -85,6 +86,7 @@ public class BouncePad : MonoBehaviour
             {
                 Rigidbody2D rb = collision.gameObject.GetComponent<Rigidbody2D>();
                 rb.AddForce(bounceMag * bounceDir);
+                Debug.Log("Bounce");
             }
         }
     }

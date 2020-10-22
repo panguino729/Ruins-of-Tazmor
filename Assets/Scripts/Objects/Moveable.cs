@@ -108,4 +108,11 @@ public class Moveable : MonoBehaviour
         rb.gravityScale = 1;
         isBeingHeld = false;
     }
+    private void OnCollisionStay2D(Collision2D collision)
+    {
+        if(collision.gameObject.name.Contains("Player"))
+        {
+            isBeingHeld = false;
+        }
+    }
 }
