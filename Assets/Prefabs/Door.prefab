@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 6531310009765603384}
   - component: {fileID: 6531310009765603385}
   m_Layer: 0
-  m_Name: Temp Door
+  m_Name: Door
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -83,7 +83,7 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
-  m_SpriteSortPoint: 0
+  m_SpriteSortPoint: 1
 --- !u!114 &6531310009765603384
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -96,6 +96,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72e9b247853cb534483e2c109e06b506, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rotatesAboutX: 0
+  rotationDegrees: 0
   reappears: 1
   plates:
   - {fileID: 0}
@@ -114,10 +116,10 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 1
-  m_Offset: {x: 0, y: -0.2}
+  m_Offset: {x: 0.5, y: -0.2}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
+    pivot: {x: 0, y: 0.5}
     oldSize: {x: 1, y: 2}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
