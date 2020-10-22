@@ -50,7 +50,7 @@ public class Door : MonoBehaviour
         }
         if (open)
         {
-            if(isYRotation && currRotation < 90)
+            if(isYRotation && currRotation < 90) //Rotates the door sideways or up and down based on isYRotation - changing the x rotation rotates up and down, y rotation sideways.
             {
                 transform.Rotate(new Vector3(rotationDegrees, 0, 0));
                 currRotation += rotationDegrees;
@@ -68,7 +68,7 @@ public class Door : MonoBehaviour
         }
         else
         {
-            if (isYRotation && currRotation > 0)
+            if (isYRotation && currRotation > 0) //Rotates the door sideways or up and down based on isYRotation - changing the x rotation rotates up and down, y rotation sideways.
             {
                 transform.Rotate(new Vector3(-rotationDegrees, 0, 0));
                 currRotation -= rotationDegrees;

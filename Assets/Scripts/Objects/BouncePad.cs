@@ -53,7 +53,7 @@ public class BouncePad : MonoBehaviour
                     "If you don't want to switch the bouncepad on/off with plates, disable needsPlates. " +
                     "Otherwise, add plates to the list.");
             }
-            for (int i = 0; i < plates.Count; i++)
+            for (int i = 0; i < plates.Count; i++) //Checks all of the plates, if applicable, to determine if the bounce pad should be on or off.
             {
                 if (!plates[i].pressed)
                 {
