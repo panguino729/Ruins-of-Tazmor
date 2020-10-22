@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3285127959832482257}
   m_Layer: 0
-  m_Name: GameUI (Missing Prefab)
+  m_Name: GameUI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -125,16 +125,36 @@ PrefabInstance:
       propertyPath: uI
       value: 
       objectReference: {fileID: 4979840601470771598}
+    - target: {fileID: 6783372223097093043, guid: 0ed199ba1e9f9495aa106cc69780c839,
+        type: 3}
+      propertyPath: m_Navigation.m_Mode
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8349471156356946916, guid: 0ed199ba1e9f9495aa106cc69780c839,
         type: 3}
       propertyPath: uI
       value: 
       objectReference: {fileID: 4979840601470771598}
+    - target: {fileID: 8349471156356946919, guid: 0ed199ba1e9f9495aa106cc69780c839,
+        type: 3}
+      propertyPath: m_Navigation.m_Mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8349471156996785650, guid: 0ed199ba1e9f9495aa106cc69780c839,
+        type: 3}
+      propertyPath: m_Navigation.m_Mode
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8349471156996785651, guid: 0ed199ba1e9f9495aa106cc69780c839,
         type: 3}
       propertyPath: uI
       value: 
       objectReference: {fileID: 4979840601470771598}
+    - target: {fileID: 8349471157285556616, guid: 0ed199ba1e9f9495aa106cc69780c839,
+        type: 3}
+      propertyPath: m_Navigation.m_Mode
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8349471157285556617, guid: 0ed199ba1e9f9495aa106cc69780c839,
         type: 3}
       propertyPath: uI
@@ -145,11 +165,21 @@ PrefabInstance:
       propertyPath: uI
       value: 
       objectReference: {fileID: 4979840601470771598}
+    - target: {fileID: 8349471157552820709, guid: 0ed199ba1e9f9495aa106cc69780c839,
+        type: 3}
+      propertyPath: m_Navigation.m_Mode
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8349471157964323794, guid: 0ed199ba1e9f9495aa106cc69780c839,
         type: 3}
       propertyPath: uI
       value: 
       objectReference: {fileID: 4979840601470771598}
+    - target: {fileID: 8349471157964323797, guid: 0ed199ba1e9f9495aa106cc69780c839,
+        type: 3}
+      propertyPath: m_Navigation.m_Mode
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8349471158405481346, guid: 0ed199ba1e9f9495aa106cc69780c839,
         type: 3}
       propertyPath: m_LocalPosition.x
