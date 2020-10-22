@@ -10,6 +10,7 @@ public class Moveable : MonoBehaviour
     public float moveStrength; //The strength of the force that telekinesis applies - could potentially make this different on different objects.
     public float maxVelocity; //The maximum velocity during telekinesis.
     private Rigidbody2D rb;
+    public LineRenderer line;
     private bool isBeingHeld = false;
     // Start is called before the first frame update
     void Start()
@@ -32,6 +33,7 @@ public class Moveable : MonoBehaviour
             name += "Moveable";
         }
         rb = GetComponent<Rigidbody2D>();
+        line = GetComponent<LineRenderer>();
     }
 
     // Update is called once per frame
@@ -62,15 +64,21 @@ public class Moveable : MonoBehaviour
             // should be on a layer OTHER THAN LAYER 0!
             LayerMask losMask = LayerMask.GetMask("Default");
             RaycastHit2D lineOfSight = Physics2D.Linecast(PlayerMovement.player.transform.position, transform.position, losMask);
+
             if (lineOfSight.collider != null)
             {
                 Debug.DrawLine(PlayerMovement.player.gameObject.transform.position, lineOfSight.point, Color.red);
+                line.SetPositions(new Vector3[]{ PlayerMovement.player.gameObject.transform.position, lineOfSight.point});
+                line.startColor = line.endColor = Color.red;
+                
                 rb.gravityScale = 1;
-                return;
             }
-            else
+            else // If there's no collider in the way, do what we'd normally do for telekinesis
             {
                 Debug.DrawLine(PlayerMovement.player.gameObject.transform.position, transform.position, Color.blue);
+                line.SetPositions(new Vector3[] { PlayerMovement.player.gameObject.transform.position, transform.position });
+                line.startColor = line.endColor = Color.blue;
+
                 rb.gravityScale = 0;
 
                 Vector3 mousePos = Input.mousePosition;
@@ -81,20 +89,22 @@ public class Moveable : MonoBehaviour
                 float distToMouseSqr = vtoc.x * vtoc.x + vtoc.y * vtoc.y;
                 rb.AddForce(moveStrength * distToMouseSqr * (mousePos - this.transform.position));
             }
+
+            line.material.SetTextureScale("_MainTex", new Vector2(1, 1));
         }
     }
     private void OnMouseDown() //Checks if the player left clicks on a moveable object in order to apply telekinesis
     {
         if (Input.GetMouseButtonDown(0))
         {
-
+            line.enabled = true;
             rb.gravityScale = 0;
             isBeingHeld = true;
         }
     }
     private void OnMouseUp() //If the player releases the mouse, no longer applies telekinesis
     {
-
+        line.enabled = false;
         rb.gravityScale = 1;
         isBeingHeld = false;
     }
