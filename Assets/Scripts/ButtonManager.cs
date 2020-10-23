@@ -8,7 +8,7 @@ public class ButtonManager : MonoBehaviour
     [SerializeField] private GameObject uI;
 
     private List<string> levels;
-    private int levelIndex = 0;
+    private static int levelIndex = 2;
     
     // Start is called before the first frame update
     void Start()
@@ -70,7 +70,8 @@ public class ButtonManager : MonoBehaviour
     public void OnNext()
     {
         Debug.Log("Clicked Next Level");
-        SceneManager.LoadScene(levels[levelIndex + 1]);
+        Scene currScene = SceneManager.GetActiveScene();
+        SceneManager.LoadScene(levelIndex);
         levelIndex++;
     }
 }
