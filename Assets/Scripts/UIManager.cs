@@ -71,20 +71,39 @@ public class UIManager : MonoBehaviour
 	/// <param name="menuState">Which menu is going to be toggled</param>
 	public void MenuControl(GameObject[] menuObjects, MenuState menuState)
 	{
-		// If paused, show UI elements labeled ShowOnPause
-		if (Time.timeScale == 1)
-		{
-			Time.timeScale = 0;
-			currentMenuState = menuState;
-			ShowMenu(menuObjects);
-		}
-		// Unpausing game hides UI elements labeled ShowOnPause
-		else if (Time.timeScale == 0)
-		{
-			Time.timeScale = 1;
-			currentMenuState = MenuState.Game;
-			HideMenu(menuObjects);
-		}
+        // If in pause menu already, cicked on spell menu
+        if (currentMenuState == MenuState.Pause && menuState == MenuState.Spells)
+        {
+            HideMenu(pauseObjects);
+            currentMenuState = menuState;
+            ShowMenu(spellsObjects);
+        }
+        // In in spells menu, clicked on pause menu
+        else if (currentMenuState == MenuState.Spells && menuState == MenuState.Pause)
+        {
+            HideMenu(spellsObjects);
+            currentMenuState = menuState;
+            ShowMenu(pauseObjects);
+        }
+        // If not in menu aleady
+        else
+        {
+            // If paused, show UI elements with correct label
+	    	if (Time.timeScale == 1)
+		    {
+		    	Time.timeScale = 0;
+		    	currentMenuState = menuState;
+		    	ShowMenu(menuObjects);
+		    }
+		    // Unpausing game hides UI elements with correct label
+		    else if (Time.timeScale == 0)
+		    {
+		    	Time.timeScale = 1;
+	    		currentMenuState = MenuState.Game;
+	    		HideMenu(menuObjects);
+	    	}
+        }
+		
 	}
 
 	/// <summary>
