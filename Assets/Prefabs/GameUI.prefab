@@ -157,6 +157,24 @@ PrefabInstance:
 
         Level'
       objectReference: {fileID: 0}
+    - target: {fileID: 8349471157032061685, guid: 0ed199ba1e9f9495aa106cc69780c839,
+        type: 3}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: 9ca3964be962e4f56af0a223693c7c5c,
+        type: 3}
+    - target: {fileID: 8349471157101687151, guid: 0ed199ba1e9f9495aa106cc69780c839,
+        type: 3}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: 9ca3964be962e4f56af0a223693c7c5c,
+        type: 3}
+    - target: {fileID: 8349471157253681065, guid: 0ed199ba1e9f9495aa106cc69780c839,
+        type: 3}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: 9ca3964be962e4f56af0a223693c7c5c,
+        type: 3}
     - target: {fileID: 8349471157285556616, guid: 0ed199ba1e9f9495aa106cc69780c839,
         type: 3}
       propertyPath: m_Navigation.m_Mode
@@ -167,6 +185,12 @@ PrefabInstance:
       propertyPath: uI
       value: 
       objectReference: {fileID: 4979840601470771598}
+    - target: {fileID: 8349471157453987597, guid: 0ed199ba1e9f9495aa106cc69780c839,
+        type: 3}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: 9ca3964be962e4f56af0a223693c7c5c,
+        type: 3}
     - target: {fileID: 8349471157552820706, guid: 0ed199ba1e9f9495aa106cc69780c839,
         type: 3}
       propertyPath: uI
@@ -182,6 +206,12 @@ PrefabInstance:
       propertyPath: m_Text
       value: "Telekinisis\n\t\n\tClick and drag on crates to move with telekinisis"
       objectReference: {fileID: 0}
+    - target: {fileID: 8349471157906977280, guid: 0ed199ba1e9f9495aa106cc69780c839,
+        type: 3}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: 9ca3964be962e4f56af0a223693c7c5c,
+        type: 3}
     - target: {fileID: 8349471157964323792, guid: 0ed199ba1e9f9495aa106cc69780c839,
         type: 3}
       propertyPath: m_Name
@@ -202,6 +232,12 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: OnRestartLevel
       objectReference: {fileID: 0}
+    - target: {fileID: 8349471158015645566, guid: 0ed199ba1e9f9495aa106cc69780c839,
+        type: 3}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: 9ca3964be962e4f56af0a223693c7c5c,
+        type: 3}
     - target: {fileID: 8349471158405481346, guid: 0ed199ba1e9f9495aa106cc69780c839,
         type: 3}
       propertyPath: m_LocalPosition.x
