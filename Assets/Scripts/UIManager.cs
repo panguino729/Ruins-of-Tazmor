@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public enum MenuState
 {
@@ -14,8 +16,12 @@ public class UIManager : MonoBehaviour
 	[SerializeField] private GameObject[] gameObjects;
     [SerializeField] private GameObject[] pauseObjects;
     [SerializeField] private GameObject[] spellsObjects;
+    [SerializeField] private GameObject[] loreObjects;
 
     public MenuState currentMenuState = MenuState.Game;
+
+    [SerializeField] private Text story;
+    public int currentLore = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -25,6 +31,7 @@ public class UIManager : MonoBehaviour
 	    gameObjects = GameObject.FindGameObjectsWithTag("showOnGame");
 	    pauseObjects = GameObject.FindGameObjectsWithTag("showOnPause");
 	    spellsObjects = GameObject.FindGameObjectsWithTag("showOnSpells");
+        loreObjects = GameObject.FindGameObjectsWithTag("showOnLore");
 
 	    HideMenu(pauseObjects);
 	    HideMenu(spellsObjects);
@@ -105,6 +112,27 @@ public class UIManager : MonoBehaviour
         }
 		
 	}
+
+    public void LoreControl()
+    {
+        string lore2 = "This temple houses an old source which gave warlocks power a long time ago, even before Old Ethshar, and was ultimately buried by the Gods.";
+        string goal = "Use your warlock powers to manipulate physics through telekinesis to move objects. Travel through each area, avoiding traps, to reach the center of the ruin.";
+
+        if (currentLore == 0)
+        {
+            story.text = lore2;
+            currentLore = 1;
+        }
+        else if (currentLore == 1)
+        {
+            story.text = goal;
+            currentLore = 2;
+        }
+        else
+        {
+            SceneManager.LoadScene("Level_01");
+        }
+    }
 
 	/// <summary>
 	/// Shows the objects in the menu

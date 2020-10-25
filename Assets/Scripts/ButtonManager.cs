@@ -28,6 +28,18 @@ public class ButtonManager : MonoBehaviour
     {
         
     }
+
+    public void OnLoreNext()
+    {
+        Debug.Log("Clicked Lore Next");
+        uI.GetComponent<UIManager>().LoreControl();
+    }
+
+    public void OnBackToTitle()
+    {
+        Debug.Log("Clicked Back to Title Screen");
+        SceneManager.LoadScene("TitleScene");
+    }
     
     public void OnStart()
     {
