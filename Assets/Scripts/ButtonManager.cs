@@ -18,6 +18,9 @@ public class ButtonManager : MonoBehaviour
         levels.Add("Level_02");
         levels.Add("Level_03");
         levels.Add("Level_04");
+        levels.Add("Level_05");
+        levels.Add("Level_06");
+        levels.Add("Level_07");
     }
 
     // Update is called once per frame
@@ -72,6 +75,6 @@ public class ButtonManager : MonoBehaviour
         Debug.Log("Clicked Next Level");
         Scene currScene = SceneManager.GetActiveScene();
         SceneManager.LoadScene(levelIndex);
-        levelIndex++;
+        levelIndex = levelIndex + 1;
     }
 }
