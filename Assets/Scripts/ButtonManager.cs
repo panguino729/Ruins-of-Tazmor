@@ -50,6 +50,11 @@ public class ButtonManager : MonoBehaviour
     {
         SceneManager.LoadScene("Controls");
     }
+
+    public void OnCredits()
+    {
+        SceneManager.LoadScene("CreditsScene");
+    }
     
     public void OnStart()
     {
