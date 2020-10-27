@@ -47,4 +47,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/LoreScene.unity
     guid: 2b5c4c82344ae4e3d878a474d503f8ff
+  - enabled: 1
+    path: Assets/Scenes/Controls.unity
+    guid: b506e2f1a6ca2e942a05bd7b7d738a6e
+  - enabled: 1
+    path: Assets/Scenes/CreditsScene.unity
+    guid: 072815052e53845cd88ea7354047b57f
   m_configObjects: {}

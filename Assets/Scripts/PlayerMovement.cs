@@ -8,6 +8,7 @@ using System.Runtime.CompilerServices;
 public class PlayerMovement : MonoBehaviour
 {
     public static PlayerMovement player;
+    private Animator animate;
     private Rigidbody2D rb;
     private BoxCollider2D boxCollider2D;
     private bool jumping;
@@ -18,6 +19,7 @@ public class PlayerMovement : MonoBehaviour
 
     void Start()
     {
+        animate = GetComponent<Animator>();
         player = this;
         name += "Player";
         startPos = this.transform.position;
@@ -37,15 +39,26 @@ public class PlayerMovement : MonoBehaviour
 
         if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
         {
+            if(transform.localScale.x == -1)
+            {
+                transform.localScale = new Vector2(1, transform.localScale.y);
+                animate.SetBool("isWalking", true);
+            }
             rb.velocity = new Vector2(movespeed, rb.velocity.y);
         }
         else if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
         {
+            if (transform.localScale.x == 1)
+            {
+                transform.localScale = new Vector2(-1, transform.localScale.y);
+                animate.SetBool("isWalking", true);
+            }
             rb.velocity = new Vector2(-movespeed, rb.velocity.y);
         }
         else
         {
             rb.velocity = new Vector2(0, rb.velocity.y);
+            animate.SetBool("isWalking", false);
         }
 
         if(IsGrounded() && Input.GetKey(KeyCode.Space))

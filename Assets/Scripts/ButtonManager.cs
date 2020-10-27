@@ -40,6 +40,21 @@ public class ButtonManager : MonoBehaviour
         Debug.Log("Clicked Back to Title Screen");
         SceneManager.LoadScene("TitleScene");
     }
+
+    public void OnToLore()
+    {
+        SceneManager.LoadScene("LoreScene");
+    }
+
+    public void OnControls()
+    {
+        SceneManager.LoadScene("Controls");
+    }
+
+    public void OnCredits()
+    {
+        SceneManager.LoadScene("CreditsScene");
+    }
     
     public void OnStart()
     {
