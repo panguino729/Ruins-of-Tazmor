@@ -21,6 +21,7 @@ public class ButtonManager : MonoBehaviour
         levels.Add("Level_05");
         levels.Add("Level_06");
         levels.Add("Level_07");
+        levels.Add("EndScene");
     }
 
     // Update is called once per frame
