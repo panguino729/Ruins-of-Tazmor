@@ -308,6 +308,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelComplete:
     m_Handle: 0
+  source: {fileID: 0}
 --- !u!212 &48038646
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -464,6 +465,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pressed: 0
   indentHeight: 0
+  source: {fileID: 0}
 --- !u!212 &440139137
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -679,7 +681,7 @@ BoxCollider2D:
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
+    pivot: {x: 0, y: 0.5}
     oldSize: {x: 1, y: 2}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
@@ -701,6 +703,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72e9b247853cb534483e2c109e06b506, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currRotation: 0
+  isYRotation: 0
+  rotationDegrees: 0
   reappears: 0
   plates: []
   open: 0
@@ -953,6 +958,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb70b13dd9a39614cabed0a62ccbed4f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  source: {fileID: 0}
 --- !u!212 &1075129209
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1165,6 +1171,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveStrength: 0
   maxVelocity: 0
+  line: {fileID: 0}
+  source: {fileID: 0}
 --- !u!114 &1077242605
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1296,7 +1304,7 @@ TilemapRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: b4d5fff8ffb8c434ea06c79b2337873a, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3396,6 +3404,7 @@ MonoBehaviour:
   bounceDirX: 0
   bounceDirY: 1
   bounceMag: 300
+  source: {fileID: 0}
 --- !u!212 &1981232697
 SpriteRenderer:
   m_ObjectHideFlags: 0
