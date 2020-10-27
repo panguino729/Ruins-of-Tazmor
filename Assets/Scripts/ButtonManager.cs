@@ -104,4 +104,9 @@ public class ButtonManager : MonoBehaviour
         SceneManager.LoadScene(levels[levelIndex]);
         levelIndex = levelIndex + 1;
     }
+
+    public void OnExit()
+    {
+        Application.Quit();
+    }
 }
