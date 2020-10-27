@@ -1059,6 +1059,11 @@ PrefabInstance:
       propertyPath: plates.Array.data[0]
       value: 
       objectReference: {fileID: 1056102775}
+    - target: {fileID: 6531310009765603384, guid: b844a21dc09955841ae896513d7499dd,
+        type: 3}
+      propertyPath: reappears
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6531310009765603386, guid: b844a21dc09955841ae896513d7499dd,
         type: 3}
       propertyPath: m_LocalPosition.x
